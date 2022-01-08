@@ -1,1 +1,21 @@
-<h2>Update the drone</h2>
+
+{{!-- 4.3 The update-form.hbs should have the pre-filled 
+form with the values of the previously passed drone object. --}}
+
+<form action="/drones/{{drone._id}}/edit" method="post" class="form">
+
+    <h2>Update the drone </h2>
+    {{!-- <h2>Update the drone <i> {{droneToEdit.name}} </i></h2> --}}
+
+    <label for="droneName" class="label">name</label>
+    <input id="droneName" name="name" type="text" value={{drone.name}}/>
+
+    <label for="propellers" class="label"> Number of propellers :</label>
+    <input type="number" id="propellers" name="propellers" value={{drone.propellers}} /> 
+
+    <label for="maxSpeed" class="label"> The max speed :</label>
+    <input type="number" id="maxSpeed" name="maxSpeed" value={{drone.maxSpeed}}>
+
+    <button>Edit the drone !</button>
+
+</form> 

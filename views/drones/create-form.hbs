@@ -1,1 +1,19 @@
 <h2>Create a new drone</h2>
+
+{{!-- The create-form.hbs should have the form // that will submit on /drones/create POST route. 
+The form should have all the //fields necessary to create a new drone. --}}
+
+<form action="/drones/create" method="post">
+
+    <label for="name">The Name :</label>
+    <input type="text" id="name" name="name" required/>
+
+    <label for="propellers"> Number of propellers :</label>
+    <input type="number" id="propellers" name="propellers" /> 
+
+    <label for="maxSpeed"> The max speed :</label>
+    <input type="number" id="maxSpeed" name="maxSpeed">
+
+    <button>Create a super drone !!</button>
+
+</form>
