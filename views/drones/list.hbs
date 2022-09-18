@@ -1,4 +1,4 @@
-<h2> Our Available drones</h2>
+<h2> Our Available drones ❤️‍🔥 </h2>
 
 {{!-- 2.3 In the drones/list.hbs file, use a #each loop to display tags with each drone's name, 
 propellers, and speed.
@@ -6,9 +6,12 @@ propellers, and speed.
 2.4 Add the link that goes to /drones route in the layout.hbs file to easier navigate to the list of drones. --}}
 {{!-- ajout lien pointant vers drone  --}}
 
+{{!-- CREATE --}}
 <a href="/drones/create"> COME ON, add a fantastic drone !</a>
 
+{{!-- LIST --}}
 {{#if drones.length}}
+
     <ul id ="list-drones">
         {{#each drones}}
         
@@ -18,15 +21,26 @@ propellers, and speed.
                <p>Max speed : {{this.maxSpeed}}</p>
            </li>
             
+            {{!-- EDIT --}}
             <a href="/drones/{{this.id}}/edit"> Edit Drone</a> <br>
             {{!-- <a href="/drones/{{this.id}}/delete"> Bye bye Drone</a> --}}
 
+            {{!-- DELETE --}}
             <form action="/drones/{{_id}}/delete" method="post">
                 <button>Delete</button>
             </form>
             {{!-- ça a fonctionné avec le form, mais pas le <a></a> --}}
+
         {{/each}} 
     </ul>
+
 {{else}}
     <p>Sooorry no drone yet</p>
+
 {{/if}}
+
+{{!-- 4.1 Link to the edit page (pointing to the /drones/<oneDroneId>/edit). When clicked,
+     the link should take you to the 404 page (still), but the URL should have a format 
+     similar to this one: /drones/123Hgt5y4500Ux8/edit.--}}
+ {{!-- 5.1 A small form with action to /drones/<oneDroneId>/delete and method POST. 
+    After clicking on the Delete button, this form submit to the action route. --}}
